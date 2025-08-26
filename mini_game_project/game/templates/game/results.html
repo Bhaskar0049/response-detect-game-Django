@@ -1,0 +1,15 @@
+{% extends 'game/base.html' %}
+{% block title %}Results - Reaction Rush{% endblock %}
+{% block content %}
+{% load static %}
+<div class="text-center mt-8">
+    <h2 class="text-2xl font-semibold mb-4">Game Over!</h2>
+    <p class="text-xl mb-2">Your Score: <span class="font-bold">{{ session.score }}</span></p>
+    <p class="mb-2">Hits: {{ session.hits }} &bull; Combos: {{ session.combos }}</p>
+    <p class="mb-6">Duration: {{ session.duration }}</p>
+    <div class="space-x-2">
+        <a href="{% url 'game:play' session.id %}" class="inline-block px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded">Play Again</a>
+        <a href="{% url 'game:leaderboard' %}?player_id={{ session.player.id }}" class="inline-block px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded">Leaderboard</a>
+    </div>
+</div>
+{% endblock %}

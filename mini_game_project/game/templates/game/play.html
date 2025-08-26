@@ -1,0 +1,19 @@
+{% extends 'game/base.html' %}
+{% block title %}Play - Reaction Rush{% endblock %}
+{% block content %}
+{% load static %}
+<h2 class="text-2xl font-semibold mb-4">Reaction Rush</h2>
+<div class="flex flex-col items-center">
+    <div id="game-area" class="w-full md:w-3/4 h-64 md:h-96 border-2 border-gray-400 bg-white relative overflow-hidden"></div>
+    <div class="flex space-x-6 mt-4 text-lg">
+        <div>Hits: <span id="score">0</span></div>
+        <div>Combos: <span id="combo">0</span></div>
+        <div>Time left: <span id="time">30.0</span>s</div>
+    </div>
+</div>
+<form id="session-info" class="hidden">
+    {% csrf_token %}
+    <input type="hidden" id="session-id" value="{{ session.id }}">
+</form>
+<script src="{% static 'game/game.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,1 @@
+"""Package to hold database migrations for the game app."""

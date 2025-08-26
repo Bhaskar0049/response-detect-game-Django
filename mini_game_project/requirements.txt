@@ -1,0 +1,6 @@
+# Project dependencies
+
+# Django is the web framework used for this project. A range is specified
+# so that the project remains compatible with future stable releases
+# without automatically upgrading across major versions.
+Django>=4.2,<6.0
